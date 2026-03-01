@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kancelaria Adwokacka Magdalena Idzik-Cieśla | Adwokat Warszawa</title>
+    <meta name="description" content="Kompleksowa obsługa prawna firm i konsumentów. Prawo rodzinne, cywilne, nieruchomości. Unikalne doświadczenie - jedyne w Polsce wyroki NSA w sprawach opłat produktowych.">
+    <meta name="keywords" content="kancelaria adwokacka, adwokat, prawo rodzinne, rozwody, obsługa firm, prawo spółdzielcze, opłaty produktowe NSA, procesy cywilne, Magdalena Idzik-Cieśla">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#f8fafc',
+                            base: '#e2e8f0',
+                            dark: '#1e293b',
+                            accent: '#1d4ed8',
+                            muted: '#64748b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f8fafc; color: #1e293b; }
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+        @media (max-width: 640px) { .chart-container { height: 250px; } }
+        .glass-panel { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+        .tab-btn.active { border-left-color: #1d4ed8; background-color: #f1f5f9; color: #1e293b; font-weight: 600; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-white">
+
+<!-- Chosen Palette: Klasyczny granat (Navy Blue) połączony z chłodnym błękitem królewskim (Royal Blue), budzący zaufanie, profesjonalizm i stabilność. -->
+<!-- Application Structure Plan: A professional, single-page SPA architecture optimized for client acquisition. The flow starts with a high-trust Hero section highlighting key strengths, moves into an Interactive Specialization Explorer (allowing users to self-identify their legal needs), highlights the unique NSA precedent (building authority), and concludes with clear Contact information. -->
+<!-- Visualization & Content Choices: 1) Specializations -> Interactive Tabs. 2) Hero Section -> Trust Badges replacing the pie chart for more direct value proposition. 3) NSA Precedent -> Chart.js Bar Chart comparing firm to market. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+<nav class="fixed w-full z-50 glass-panel border-b border-gray-200 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <span class="text-3xl text-brand-accent">&#x2696;</span>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-xl leading-tight text-brand-dark">Kancelaria Adwokacka</span>
+                    <span class="text-sm font-medium text-brand-muted tracking-wide uppercase">Magdalena Idzik-Cieśla</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="o-mnie.html" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">O mnie</a>
+                <a href="#specjalizacje" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Specjalizacje</a>
+                <a href="#unikalność" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Unikalna Ekspertyza</a>
+                <a href="#kontakt" class="bg-brand-dark text-white px-6 py-2 rounded shadow hover:bg-brand-accent transition-colors font-medium">Kontakt</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <div class="inline-block px-4 py-1 rounded-full bg-blue-50 text-brand-accent font-semibold text-sm mb-6 uppercase tracking-wider">
+                Skuteczność i Doświadczenie
+            </div>
+            <h1 class="text-5xl lg:text-6xl font-serif font-bold text-brand-dark leading-tight mb-6">
+                Skuteczna ochrona Twoich interesów prawnych.
+            </h1>
+            <p class="text-xl text-brand-muted mb-8 leading-relaxed">
+                Kompleksowa obsługa firm i konsumentów. Indywidualne podejście do prawa rodzinnego, cywilnego oraz bezprecedensowe sukcesy przed NSA w sprawach opłat produktowych.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#kontakt" class="bg-brand-dark text-white text-center px-8 py-4 rounded font-semibold text-lg hover:bg-brand-accent transition-all shadow-lg hover:shadow-xl">
+                    Skonsultuj swoją sprawę
+                </a>
+                <a href="#specjalizacje" class="bg-white border-2 border-brand-base text-brand-dark text-center px-8 py-4 rounded font-semibold text-lg hover:border-brand-dark transition-all">
+                    Poznaj obszary praktyki
+                </a>
+            </div>
+        </div>
+        <div class="relative hidden lg:block">
+            <div class="absolute inset-0 bg-brand-accent rounded-full opacity-5 blur-3xl transform translate-x-10 translate-y-10"></div>
+            <div class="relative z-10 space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-xl border-l-4 border-brand-accent transform transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="flex items-start gap-4">
+                        <div class="text-3xl">&#x1F3DB;</div>
+                        <div>
+                            <h3 class="font-serif font-bold text-xl text-brand-dark mb-1">Precedensy przed NSA</h3>
+                            <p class="text-brand-muted text-sm leading-relaxed">Jedyne w Polsce korzystne wyroki Naczelnego Sądu Administracyjnego w sprawach opłat produktowych.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-xl border-l-4 border-brand-dark transform transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="flex items-start gap-4">
+                        <div class="text-3xl">&#x1F4BC;</div>
+                        <div>
+                            <h3 class="font-serif font-bold text-xl text-brand-dark mb-1">Bezpieczeństwo Biznesu</h3>
+                            <p class="text-brand-muted text-sm leading-relaxed">Kompleksowa, bieżąca obsługa prawna firm minimalizująca ryzyka procesowe i kontraktowe.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-xl border-l-4 border-gray-300 transform transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="flex items-start gap-4">
+                        <div class="text-3xl">&#x2696;</div>
+                        <div>
+                            <h3 class="font-serif font-bold text-xl text-brand-dark mb-1">Prawo Rodzinne i Cywilne</h3>
+                            <p class="text-brand-muted text-sm leading-relaxed">Dyskrecja i skuteczność w rozwodach, podziałach majątku oraz sporach z instytucjami.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="specjalizacje" class="py-20 bg-white border-t border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-4xl font-serif font-bold text-brand-dark mb-4">Obszary Specjalizacji</h2>
+            <p class="text-lg text-brand-muted">Interaktywny panel dziedzin prawa. Wybierz interesujący Cię obszar, aby poznać szczegóły naszej oferty, zakres usług oraz podejście do Twojego problemu prawnego.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-4 flex flex-col space-y-2 border-l-4 border-gray-100" id="specialization-tabs">
+            </div>
+
+            <div class="lg:col-span-8 bg-brand-light p-8 md:p-12 rounded-2xl border border-gray-200 min-h-[400px] flex flex-col justify-center transition-all duration-500" id="specialization-content">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="unikalność" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#1d4ed8 1px, transparent 1px); background-size: 30px 30px;"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-brand-accent/20 text-brand-accent font-semibold text-sm mb-6 uppercase tracking-wider border border-brand-accent/30">
+                    <span class="text-lg">&#x2B50;</span> Unikalna Ekspertyza w Skali Kraju
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-serif font-bold mb-6 leading-tight">
+                    Opłaty Produktowe:<br>Precedens przed NSA
+                </h2>
+                <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+                    Jako <strong>jedyna kancelaria w Polsce</strong> wywalczyliśmy korzystne wyroki przed Naczelnym Sądem Administracyjnym (NSA) w specyficznych sprawach dotyczących opłat produktowych.
+                </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start gap-3">
+                        <span class="text-brand-accent text-xl mt-1">&#x2714;</span>
+                        <span class="text-gray-300">Przełamanie dotychczasowej, niekorzystnej linii orzeczniczej.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-brand-accent text-xl mt-1">&#x2714;</span>
+                        <span class="text-gray-300">Ochrona przedsiębiorców przed niezasadnymi obciążeniami finansowymi.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-brand-accent text-xl mt-1">&#x2714;</span>
+                        <span class="text-gray-300">Tworzenie nowego prawa w praktyce poprzez precedensowe orzeczenia.</span>
+                    </li>
+                </ul>
+                <button onclick="document.getElementById('kontakt').scrollIntoView()" class="bg-brand-accent text-white px-8 py-3 rounded font-semibold hover:bg-blue-600 transition-colors shadow-lg">
+                    Sprawdź swoją sytuację
+                </button>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-2xl">
+                <h3 class="font-serif text-2xl font-bold mb-2 text-brand-dark text-center">Skuteczność przed NSA w Polsce</h3>
+                <p class="text-sm text-center text-brand-muted mb-6">Analiza spraw o analogicznym stanie faktycznym (opłaty produktowe)</p>
+                <div class="chart-container">
+                    <canvas id="nsaChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-4xl font-serif font-bold text-brand-dark mb-4">Jak pracujemy?</h2>
+            <p class="text-lg text-brand-muted">Proces współpracy z naszą Kancelarią jest przejrzysty i nastawiony na maksymalne odciążenie Klienta.</p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center p-6 bg-brand-light rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-3xl shadow-sm mx-auto mb-4 border border-gray-200 text-brand-dark">&#x1F4DE;</div>
+                <h3 class="font-bold text-xl mb-2 text-brand-dark">1. Kontakt</h3>
+                <p class="text-brand-muted text-sm">Przedstawienie problemu prawnego telefonicznie lub mailowo.</p>
+            </div>
+            <div class="text-center p-6 bg-brand-light rounded-xl border border-gray-100 hover:shadow-lg transition-shadow relative">
+                <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gray-300 z-0"></div>
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-3xl shadow-sm mx-auto mb-4 border border-gray-200 text-brand-dark relative z-10">&#x1F4DA;</div>
+                <h3 class="font-bold text-xl mb-2 text-brand-dark">2. Analiza</h3>
+                <p class="text-brand-muted text-sm">Szczegółowa analiza dokumentów i ocena ryzyka oraz szans.</p>
+            </div>
+            <div class="text-center p-6 bg-brand-light rounded-xl border border-gray-100 hover:shadow-lg transition-shadow relative">
+                <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gray-300 z-0"></div>
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-3xl shadow-sm mx-auto mb-4 border border-gray-200 text-brand-dark relative z-10">&#x1F91D;</div>
+                <h3 class="font-bold text-xl mb-2 text-brand-dark">3. Strategia</h3>
+                <p class="text-brand-muted text-sm">Wspólne ustalenie planu działania i podpisanie umowy.</p>
+            </div>
+            <div class="text-center p-6 bg-brand-light rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+                <div class="w-16 h-16 bg-brand-accent text-white rounded-full flex items-center justify-center text-3xl shadow-md mx-auto mb-4">&#x2696;</div>
+                <h3 class="font-bold text-xl mb-2 text-brand-dark">4. Działanie</h3>
+                <p class="text-brand-muted text-sm">Zdecydowana reprezentacja przed sądami lub urzędami.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="kontakt" class="py-20 bg-brand-light border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+            <div class="grid lg:grid-cols-5">
+                <div class="lg:col-span-2 bg-brand-dark p-12 text-white flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold mb-6">Skontaktuj się z nami</h2>
+                        <p class="text-gray-300 mb-12">Jesteśmy do Twojej dyspozycji. Skontaktuj się z nami, aby omówić szczegóły Twojej sprawy. Gwarantujemy poufność i profesjonalizm.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-2xl">&#x1F4DE;</div>
+                                <div>
+                                    <p class="text-sm text-gray-400">Telefon</p>
+                                    <p class="text-xl font-bold tracking-wider">605 089 552</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-2xl">&#x2709;</div>
+                                <div>
+                                    <p class="text-sm text-gray-400">Email</p>
+                                    <p class="text-lg font-bold">kancelaria@idzik.org.pl</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-2xl">&#x1F3DB;</div>
+                                <div>
+                                    <p class="text-sm text-gray-400">Adres Kancelarii</p>
+                                    <p class="text-lg font-bold">Warszawa, Polska</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-3 p-12">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-6">Formularz kontaktowy</h3>
+                    <form id="contactForm" onsubmit="event.preventDefault(); alert('Dziękujemy. Wiadomość została wysłana (wersja demonstracyjna).');" class="space-y-6">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-brand-muted mb-2">Imię i nazwisko</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-brand-muted mb-2">Telefon</label>
+                                <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-brand-muted mb-2">Adres email</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-brand-muted mb-2">Opisz krótko swoją sprawę</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-all resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-dark text-white py-4 rounded-lg font-bold text-lg hover:bg-brand-accent transition-colors">
+                            Wyślij wiadomość
+                        </button>
+                        <p class="text-xs text-gray-500 text-center mt-4">Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych osobowych w celu kontaktu zwrotnego.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-white border-t border-gray-200 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+            <span class="text-2xl text-brand-dark">&#x2696;</span>
+            <span class="font-serif font-bold text-brand-dark">Kancelaria Adwokacka Magdalena Idzik-Cieśla</span>
+        </div>
+        <p class="text-brand-muted text-sm">&copy; <span id="year"></span> Wszelkie prawa zastrzeżone.</p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 20) {
+            nav.classList.add('shadow-md');
+        } else {
+            nav.classList.remove('shadow-md');
+        }
+    });
+
+    const specializations = [
+        {
+            id: 'firmy',
+            icon: '&#x1F3E2;',
+            title: 'Obsługa bieżąca firm',
+            short: 'Kompleksowa obsługa przedsiębiorstw i procesów',
+            description: 'Zapewniamy stałą, profesjonalną opiekę prawną dla podmiotów gospodarczych. Reprezentujemy firmy w skomplikowanych procesach gospodarczych, pomagamy w negocjacjach kontraktów, dbamy o bezpieczeństwo prawne inwestycji i bieżącej działalności. Nasz cel to minimalizacja ryzyka Twojego biznesu.',
+            tags: ['Prawo Gospodarcze', 'Umowy', 'Procesy B2B']
+        },
+        {
+            id: 'konsumenci',
+            icon: '&#x1F6E1;',
+            title: 'Obsługa konsumentów',
+            short: 'Ochrona praw w starciu z korporacjami',
+            description: 'Wyrównujemy szanse w sporach z dużymi instytucjami (banki, ubezpieczalnie, deweloperzy). Analizujemy umowy pod kątem klauzul niedozwolonych (abuzwynych), pomagamy w odstępowaniu od niekorzystnych umów i dochodzeniu roszczeń z tytułu rękojmi lub gwarancji.',
+            tags: ['Klauzule Abuzuwyne', 'Reklamacje', 'Odszkodowania']
+        },
+        {
+            id: 'rodzinne',
+            icon: '&#x1F46A;',
+            title: 'Prawo rodzinne i spadkowe',
+            short: 'Rozwody, podział majątku, dzieci, testamenty',
+            description: 'Zapewniamy wsparcie i dyskrecję w najtrudniejszych momentach życia. Prowadzimy sprawy o rozwód, separację, alimenty, kontakty z dziećmi oraz skomplikowane sprawy o podział majątku. Doradzamy również w sprawach spadkowych (stwierdzenie nabycia spadku, zachowek, dział spadku).',
+            tags: ['Rozwody', 'Alimenty', 'Spadki']
+        },
+        {
+            id: 'cywilne',
+            icon: '&#x2696;',
+            title: 'Procesy cywilne',
+            short: 'Skuteczna reprezentacja przed sądami',
+            description: 'Posiadamy bogate doświadczenie procesowe. Zastępujemy Klientów w postępowaniach cywilnych na każdym ich etapie. Przygotowujemy strategie procesowe, pisma (pozwy, apelacje, zażalenia) oraz aktywnie uczestniczymy w rozprawach, walcząc o najlepszy wynik.',
+            tags: ['Postępowanie Sądowe', 'Odszkodowania', 'Windykacja']
+        },
+        {
+            id: 'spoldzielcze',
+            icon: '&#x1F3D8;',
+            title: 'Prawo spółdzielcze i nieruchomości',
+            short: 'Audyty, umowy deweloperskie, spory spółdzielcze',
+            description: 'Doradzamy w sprawach związanych z obrotem nieruchomościami (analiza stanu prawnego, umowy deweloperskie). Posiadamy również dogłębną wiedzę z zakresu prawa spółdzielczego, reprezentując członków spółdzielni w sporach z zarządami oraz obsługując same spółdzielnie.',
+            tags: ['Umowy Deweloperskie', 'Księgi Wieczyste', 'Wspólnoty']
+        }
+    ];
+
+    function renderTabs() {
+        const tabsContainer = document.getElementById('specialization-tabs');
+        tabsContainer.innerHTML = '';
+        
+        specializations.forEach((spec, index) => {
+            const btn = document.createElement('button');
+            btn.className = `tab-btn w-full text-left px-6 py-4 border-l-4 border-transparent hover:bg-gray-50 hover:border-brand-base transition-all flex items-center gap-4 ${index === 0 ? 'active' : ''}`;
+            btn.onclick = () => selectTab(index);
+            
+            btn.innerHTML = `
+                <span class="text-3xl w-10 text-center">${spec.icon}</span>
+                <div>
+                    <div class="font-bold text-lg">${spec.title}</div>
+                    <div class="text-xs text-brand-muted mt-1">${spec.short}</div>
+                </div>
+            `;
+            tabsContainer.appendChild(btn);
+        });
+        
+        selectTab(0);
+    }
+
+    function selectTab(index) {
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach((btn, i) => {
+            if (i === index) btn.classList.add('active');
+            else btn.classList.remove('active');
+        });
+
+        const spec = specializations[index];
+        const content = document.getElementById('specialization-content');
+        
+        content.style.opacity = '0';
+        
+        setTimeout(() => {
+            let tagsHtml = spec.tags.map(tag => `<span class="px-3 py-1 bg-white text-brand-dark text-sm font-medium rounded-full border border-gray-200">${tag}</span>`).join('');
+            
+            content.innerHTML = `
+                <div class="text-6xl mb-6 opacity-80">${spec.icon}</div>
+                <h3 class="text-3xl font-serif font-bold text-brand-dark mb-4">${spec.title}</h3>
+                <p class="text-lg text-brand-muted leading-relaxed mb-8">${spec.description}</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    ${tagsHtml}
+                </div>
+                <div>
+                    <a href="#kontakt" class="inline-flex items-center gap-2 font-bold text-brand-accent hover:text-blue-800 transition-colors">
+                        Porozmawiaj o tej sprawie <span class="text-xl">&#x2192;</span>
+                    </a>
+                </div>
+            `;
+            content.style.opacity = '1';
+        }, 200);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        renderTabs();
+
+        Chart.defaults.font.family = 'Inter, sans-serif';
+        Chart.defaults.color = '#64748b';
+
+        const ctxNsa = document.getElementById('nsaChart').getContext('2d');
+        new Chart(ctxNsa, {
+            type: 'bar',
+            data: {
+                labels: ['Inne Kancelarie w PL', 'Kancelaria Idzik-Cieśla'],
+                datasets: [{
+                    label: 'Pozytywne wyroki NSA (Opłaty produktowe)',
+                    data: [0, 100], 
+                    backgroundColor: [
+                        '#cbd5e1', 
+                        '#1d4ed8'  
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) { return value + '%'; }
+                        },
+                        grid: { color: '#f1f5f9' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                if(context.dataIndex === 0) return ' Brak precedensów';
+                                return ' Jedyne wygrane w Polsce (100% zbadanych precedensów)';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
