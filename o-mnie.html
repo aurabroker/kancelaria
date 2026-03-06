@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O mnie | Adwokat Magdalena Idzik-Cieśla</title>
     
-    <!-- SEO, Open Graph & Canonical -->
     <meta name="description" content="Poznaj adwokat Magdalenę Idzik-Cieślę. Doświadczenie, skuteczność i unikalne sukcesy przed Naczelnym Sądem Administracyjnym.">
     <link rel="canonical" href="https://idzik.org.pl/o-mnie.html">
     
@@ -15,11 +14,9 @@
     <meta property="og:url" content="https://idzik.org.pl/o-mnie.html">
     <meta property="og:locale" content="pl_PL">
 
-    <!-- Preconnect dla maksymalnej wydajności TTFB czcionek -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Consent Mode v2 (Zgodność z Blacklistą - Wymagane przez Google 2024+) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -31,25 +28,21 @@
         });
     </script>
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRJXM98XK6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-VRJXM98XK6');
     </script>
 
-    <!-- 🚀 NUKLEARNY PERFORMANCE: Speculative Rules V2 (Prerenderowanie) -->
     <script type="speculationrules">
     {
-      "prerender": [{"source": "list", "urls": ["index.html"]}],
+      "prerender": [{"source": "list", "urls": ["index.html", "wspolpraca.html"]}],
       "prefetch": [{"source": "document", "where": {"href_matches": "/*"}, "eagerness": "moderate"}]
     }
     </script>
 
-    <!-- 🧠 SEO & SCHEMA GURU: JSON-LD (Dominacja Autorytetu - ProfilePage) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -68,27 +61,19 @@
     }
     </script>
 
-    <!-- Favicon Placeholders -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Wyłącznie Inter - zero szeryfów -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
                         brand: {
-                            light: '#f8fafc',
-                            base: '#e2e8f0',
-                            dark: '#1e293b',
-                            accent: '#1d4ed8',
-                            muted: '#64748b'
+                            light: '#f8fafc', base: '#e2e8f0', dark: '#1e293b', accent: '#1d4ed8', muted: '#64748b'
                         }
                     }
                 }
@@ -99,8 +84,6 @@
     <style>
         body { background-color: #f8fafc; color: #1e293b; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
         .glass-panel { background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
-        
-        /* Skeleton Shimmer dla loadera zdjęcia - Perceived Performance */
         .photo-placeholder {
             background: linear-gradient(135deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%);
             background-size: 200% 100%;
@@ -108,8 +91,6 @@
             display: flex; align-items: center; justify-content: center; color: #64748b;
         }
         @keyframes skeleton-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-
-        /* 💡 NEURO-MANIPULACJA UX: Subtelne pulsowanie dla konwersji (Fitts's Law Anchor) */
         @keyframes pulse-soft { 
             0%, 100% { transform: scale(1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); } 
             50% { transform: scale(1.03); box-shadow: 0 15px 30px -5px rgba(29, 78, 216, 0.4); } 
@@ -129,12 +110,33 @@
                     <span class="text-sm font-medium text-brand-muted tracking-wide uppercase">Magdalena Idzik-Cieśla</span>
                 </div>
             </a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="o-mnie.html" class="text-brand-accent font-semibold transition-colors">O mnie</a>
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="o-mnie.html" class="text-brand-accent font-semibold transition-colors border-b-2 border-brand-accent">O mnie</a>
+                <a href="wspolpraca.html#cennik" class="text-brand-dark hover:text-brand-accent font-bold transition-colors">Cennik</a>
+                <a href="wspolpraca.html" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Zasady współpracy</a>
                 <a href="index.html#specjalizacje" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Specjalizacje</a>
-                <a href="index.html#unikalnosc" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Unikalna Ekspertyza</a>
                 <a href="index.html#kontakt" class="bg-brand-dark text-white px-6 py-2 rounded shadow hover:bg-brand-accent transition-colors font-medium">Kontakt</a>
             </div>
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-accent focus:outline-none p-2" aria-label="Otwórz menu">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0">
+        <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+            <a href="index.html" class="block px-3 py-3 text-brand-dark hover:bg-gray-50 rounded-md font-medium">Strona główna</a>
+            <a href="o-mnie.html" class="block px-3 py-3 text-brand-accent hover:bg-gray-50 rounded-md font-bold">O mnie</a>
+            <a href="wspolpraca.html#cennik" class="block px-3 py-3 text-brand-dark hover:bg-gray-50 rounded-md font-bold">Cennik</a>
+            <a href="wspolpraca.html" class="block px-3 py-3 text-brand-dark hover:bg-gray-50 rounded-md font-medium">Zasady współpracy</a>
+            <a href="index.html#specjalizacje" class="block px-3 py-3 text-brand-dark hover:bg-gray-50 rounded-md font-medium">Specjalizacje</a>
+            <a href="index.html#kontakt" class="block mt-4 text-center bg-brand-dark text-white px-6 py-3 rounded-md shadow hover:bg-brand-accent font-medium">Kontakt</a>
         </div>
     </div>
 </nav>
@@ -142,10 +144,8 @@
 <main class="pt-32 pb-20 lg:pt-40 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen">
     <div class="grid lg:grid-cols-12 gap-12 items-start">
         
-        <!-- Kolumna ze zdjęciem i szybkimi kontaktami -->
         <div class="lg:col-span-5 relative">
             <div class="sticky top-32 space-y-6">
-                <!-- Miejsce na zdjęcie -->
                 <div class="aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white photo-placeholder relative">
                     <div class="absolute inset-0 bg-brand-dark opacity-5"></div>
                     <div class="text-center p-6 relative z-10">
@@ -170,7 +170,6 @@
             </div>
         </div>
 
-        <!-- Kolumna z treścią -->
         <div class="lg:col-span-7">
             <div class="inline-block px-4 py-1 rounded-full bg-blue-50 text-brand-accent font-semibold text-sm mb-6 uppercase tracking-wider">
                 Poznajmy się
@@ -226,25 +225,25 @@
     </div>
 </main>
 
-<footer class="bg-white border-t border-gray-200 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<footer class="bg-white border-t border-gray-200 py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-2">
             <span class="text-2xl text-brand-dark" aria-hidden="true">&#x2696;</span>
-            <span class="font-bold text-brand-dark tracking-tight">Kancelaria Adwokacka Magdalena Idzik-Cieśla</span>
+            <span class="font-bold text-brand-dark tracking-tight text-center md:text-left">Kancelaria Adwokacka<br class="md:hidden"> Magdalena Idzik-Cieśla</span>
         </div>
-        <div class="flex gap-6 text-sm">
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
             <a href="index.html" class="text-brand-muted hover:text-brand-accent transition-colors">Strona główna</a>
-            <a href="index.html#specjalizacje" class="text-brand-muted hover:text-brand-accent transition-colors">Specjalizacje</a>
+            <a href="o-mnie.html" class="text-brand-muted hover:text-brand-accent transition-colors">O mnie</a>
+            <a href="wspolpraca.html" class="text-brand-muted hover:text-brand-accent transition-colors">Współpraca / Cennik</a>
+            <a href="polityka-prywatnosci.html" class="text-brand-muted hover:text-brand-accent transition-colors">Polityka prywatności</a>
         </div>
-        <p class="text-brand-muted text-sm">&copy; <span id="year"></span> Wszelkie prawa zastrzeżone.</p>
+        <p class="text-brand-muted text-sm text-center md:text-right">&copy; <span id="year"></span> Wszelkie prawa zastrzeżone.</p>
     </div>
 </footer>
 
 <script>
-    // Automatyczny rok w stopce
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Szklany Navbar na scroll
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('navbar');
         if (window.scrollY > 20) {
@@ -254,7 +253,20 @@
         }
     }, { passive: true });
 
-    /* 🏴‍☠️ BLACK-HAT SPEED OPS - Wstępne ładowanie zasobów na hover */
+    // Obsługa menu mobilnego
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+
     document.querySelectorAll('a').forEach(a => {
         a.addEventListener('mouseenter', () => {
             const url = a.getAttribute('href');
@@ -267,7 +279,6 @@
         }, { once: true });
     });
 
-    /* Ghost Navigation (SPA feel) */
     window.addEventListener('pageshow', (e) => { 
         if (e.persisted) window.location.reload(); 
     });
