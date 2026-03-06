@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zasady Współpracy i Cennik | Kancelaria Adwokacka</title>
     
-    <!-- SEO & Canonical -->
     <meta name="description" content="Przejrzyste zasady współpracy, cennik usług prawnych oraz informacje dla konsumentów.">
     <link rel="canonical" href="https://idzik.org.pl/wspolpraca.html">
     
@@ -15,11 +14,9 @@
     <meta property="og:url" content="https://idzik.org.pl/wspolpraca.html">
     <meta property="og:locale" content="pl_PL">
 
-    <!-- Preconnect dla maksymalnej wydajności TTFB czcionek -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Consent Mode v2 -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -31,7 +28,6 @@
         });
     </script>
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRJXM98XK6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -40,7 +36,6 @@
       gtag('config', 'G-VRJXM98XK6');
     </script>
 
-    <!-- 🚀 NUKLEARNY PERFORMANCE: Speculative Rules V2 -->
     <script type="speculationrules">
     {
       "prerender": [{"source": "list", "urls": ["index.html", "o-mnie.html"]}],
@@ -57,16 +52,10 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
                         brand: {
-                            light: '#f8fafc',
-                            base: '#e2e8f0',
-                            dark: '#1e293b',
-                            accent: '#1d4ed8',
-                            muted: '#64748b'
+                            light: '#f8fafc', base: '#e2e8f0', dark: '#1e293b', accent: '#1d4ed8', muted: '#64748b'
                         }
                     }
                 }
@@ -79,8 +68,6 @@
         .glass-panel { background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
         .highlight-box { position: relative; overflow: hidden; }
         .highlight-box::before { content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background-color: #1d4ed8; }
-        
-        /* 💡 NEURO-MANIPULACJA UX: Subtelne pulsowanie dla konwersji (Fitts's Law Anchor) */
         @keyframes pulse-soft { 
             0%, 100% { transform: scale(1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); } 
             50% { transform: scale(1.03); box-shadow: 0 15px 30px -5px rgba(29, 78, 216, 0.4); } 
@@ -100,14 +87,33 @@
                     <span class="text-sm font-medium text-brand-muted tracking-wide uppercase">Magdalena Idzik-Cieśla</span>
                 </div>
             </a>
+            <!-- Desktop Menu -->
             <div class="hidden lg:flex space-x-6 items-center">
                 <a href="o-mnie.html" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">O mnie</a>
-                <!-- Link Cennik obok O mnie -->
                 <a href="#cennik" class="text-brand-accent font-bold transition-colors">Cennik</a>
                 <a href="wspolpraca.html" class="text-brand-accent font-semibold transition-colors border-b-2 border-brand-accent">Zasady współpracy</a>
                 <a href="index.html#specjalizacje" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Specjalizacje</a>
                 <a href="index.html#kontakt" class="bg-brand-dark text-white px-6 py-2 rounded shadow hover:bg-brand-accent transition-colors font-medium">Kontakt</a>
             </div>
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-accent focus:outline-none p-2" aria-label="Otwórz menu">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0">
+        <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+            <a href="index.html" class="block px-3 py-3 text-brand-dark hover:bg-gray-50 rounded-md font-medium">Strona główna</a>
+            <a href="o-mnie.html" class="block px-3 py-3 text-brand-dark hover:bg-gray-50 rounded-md font-medium">O mnie</a>
+            <a href="#cennik" class="block px-3 py-3 text-brand-accent hover:bg-gray-50 rounded-md font-bold">Cennik</a>
+            <a href="wspolpraca.html" class="block px-3 py-3 text-brand-accent hover:bg-gray-50 rounded-md font-medium">Zasady współpracy</a>
+            <a href="index.html#specjalizacje" class="block px-3 py-3 text-brand-dark hover:bg-gray-50 rounded-md font-medium">Specjalizacje</a>
+            <a href="index.html#kontakt" class="block mt-4 text-center bg-brand-dark text-white px-6 py-3 rounded-md shadow hover:bg-brand-accent font-medium">Kontakt</a>
         </div>
     </div>
 </nav>
@@ -171,7 +177,6 @@
             </div>
         </section>
 
-        <!-- WYNAGRODZENIE -->
         <section>
             <h2 class="text-3xl font-bold tracking-tight mb-4">Wynagrodzenie</h2>
             <p>
@@ -182,7 +187,7 @@
             </p>
         </section>
 
-        <!-- CENNIK W RAMCE (BOXACH) -->
+        <!-- CENNIK W RAMCE -->
         <section id="cennik" class="scroll-mt-32 my-16 relative">
             <div class="absolute -inset-4 bg-gradient-to-br from-brand-base to-gray-50 rounded-3xl z-0 transform -rotate-1 opacity-50"></div>
             <div class="relative z-10 bg-white ring-4 ring-gray-100 rounded-3xl p-8 md:p-12 shadow-2xl">
@@ -192,7 +197,6 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6 mb-8">
-                    <!-- Box 1 -->
                     <div class="bg-brand-light p-6 rounded-2xl border border-gray-200 hover:border-brand-accent transition-all duration-300">
                         <div class="text-2xl mb-2" aria-hidden="true">&#x1F4BB;</div>
                         <h4 class="font-bold text-lg text-brand-dark mb-1">Spotkanie online</h4>
@@ -200,7 +204,6 @@
                         <p class="text-3xl font-extrabold text-brand-accent">500 zł <span class="text-base font-medium text-gray-500">/ 1h</span></p>
                     </div>
                     
-                    <!-- Box 2 -->
                     <div class="bg-brand-light p-6 rounded-2xl border border-gray-200 hover:border-brand-accent transition-all duration-300">
                         <div class="text-2xl mb-2" aria-hidden="true">&#x1F3E2;</div>
                         <h4 class="font-bold text-lg text-brand-dark mb-1">Spotkanie w kancelarii</h4>
@@ -208,7 +211,6 @@
                         <p class="text-3xl font-extrabold text-brand-accent">1 000 zł <span class="text-base font-medium text-gray-500">/ 1h</span></p>
                     </div>
 
-                    <!-- Box 3 -->
                     <div class="bg-brand-light p-6 rounded-2xl border border-gray-200 hover:border-brand-accent transition-all duration-300">
                         <div class="text-2xl mb-2" aria-hidden="true">&#x1F4DE;</div>
                         <h4 class="font-bold text-lg text-brand-dark mb-1">Rozmowy telefoniczne</h4>
@@ -216,7 +218,6 @@
                         <p class="text-3xl font-extrabold text-brand-accent">300 zł <span class="text-base font-medium text-gray-500">/ 30 min</span></p>
                     </div>
 
-                    <!-- Box 4 -->
                     <div class="bg-brand-light p-6 rounded-2xl border border-gray-200 hover:border-brand-accent transition-all duration-300">
                         <div class="text-2xl mb-2" aria-hidden="true">&#x23F1;</div>
                         <h4 class="font-bold text-lg text-brand-dark mb-1">Rozliczenie godzinowe</h4>
@@ -273,7 +274,6 @@
             </div>
         </section>
 
-        <!-- DETALE ROZLICZEŃ -->
         <section class="space-y-12">
             <div>
                 <h3 class="text-2xl font-bold tracking-tight mb-4">Stawka godzinowa w praktyce</h3>
@@ -313,7 +313,6 @@
             </div>
         </section>
 
-        <!-- WYDATKI I PŁATNOŚCI -->
         <section class="grid md:grid-cols-2 gap-10 border-t border-gray-200 pt-10 mt-10">
             <div>
                 <h3 class="text-2xl font-bold tracking-tight mb-4">Zwrot wydatków</h3>
@@ -337,7 +336,6 @@
             </div>
         </section>
 
-        <!-- OBOWIĄZKI KLIENTA -->
         <section class="bg-brand-light p-8 rounded-2xl my-12">
             <h3 class="text-2xl font-bold tracking-tight mb-4">Obowiązki Klienta</h3>
             <p>Dla zagwarantowania najwyższej jakości usług, do podstawowych obowiązków Klienta należą:</p>
@@ -349,7 +347,6 @@
             </ul>
         </section>
 
-        <!-- KONTAKT I GODZINY PRACY -->
         <section>
             <h3 class="text-3xl font-bold tracking-tight mb-6">Godziny pracy i kontakt</h3>
             
@@ -392,18 +389,18 @@
 </main>
 
 <footer class="bg-white border-t border-gray-200 py-8 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-2">
             <span class="text-2xl text-brand-dark" aria-hidden="true">&#x2696;</span>
-            <span class="font-bold text-brand-dark tracking-tight">Kancelaria Adwokacka Magdalena Idzik-Cieśla</span>
+            <span class="font-bold text-brand-dark tracking-tight text-center md:text-left">Kancelaria Adwokacka<br class="md:hidden"> Magdalena Idzik-Cieśla</span>
         </div>
-        <div class="flex flex-wrap justify-center gap-6 text-sm">
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
             <a href="index.html" class="text-brand-muted hover:text-brand-accent transition-colors">Strona główna</a>
             <a href="o-mnie.html" class="text-brand-muted hover:text-brand-accent transition-colors">O mnie</a>
-            <a href="wspolpraca.html" class="text-brand-muted hover:text-brand-accent transition-colors">Zasady współpracy / Cennik</a>
+            <a href="wspolpraca.html" class="text-brand-muted hover:text-brand-accent transition-colors">Współpraca / Cennik</a>
             <a href="polityka-prywatnosci.html" class="text-brand-muted hover:text-brand-accent transition-colors">Polityka prywatności</a>
         </div>
-        <p class="text-brand-muted text-sm">&copy; <span id="year"></span> Wszelkie prawa zastrzeżone.</p>
+        <p class="text-brand-muted text-sm text-center md:text-right">&copy; <span id="year"></span> Wszelkie prawa zastrzeżone.</p>
     </div>
 </footer>
 
@@ -418,6 +415,20 @@
             nav.classList.remove('shadow-md');
         }
     }, { passive: true });
+
+    // Obsługa menu mobilnego
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
 
     document.querySelectorAll('a').forEach(a => {
         a.addEventListener('mouseenter', () => {
