@@ -1,0 +1,43 @@
+{
+  "project": "Kancelaria Adwokacka - formularz kontaktowy",
+  "stack": "statyczny HTML + Tailwind CSS (CDN) + vanilla JS",
+  "zadania_wykonane": [
+    {
+      "id": 1,
+      "opis": "Podłączenie formularza kontaktowego do Web3Forms",
+      "plik": "index.html",
+      "szczegoly": {
+        "serwis": "web3forms.com",
+        "endpoint": "https://api.web3forms.com/submit",
+        "metoda": "POST z FormData + fetch (async/await)",
+        "access_key": "be1e4321-2444-4205-a5de-2ba21c3d68dc",
+        "poprzedni_stan": "onsubmit z alert() i tekstem 'wersja demonstracyjna'",
+        "nowy_stan": "fetch do API, komunikaty po polsku, reset formularza po sukcesie, blokada przycisku podczas wysyłki"
+      }
+    },
+    {
+      "id": 2,
+      "opis": "Dodanie atrybutów name do pól formularza",
+      "plik": "index.html",
+      "szczegoly": {
+        "problem": "FormData zbiera dane po atrybucie name, a pola miały tylko id - Web3Forms dostawał pusty formularz",
+        "pola": [
+          { "id": "form_name", "name": "name",    "typ": "text",  "label": "Imię i nazwisko" },
+          { "id": "form_tel",  "name": "phone",   "typ": "tel",   "label": "Telefon" },
+          { "id": "form_email","name": "email",   "typ": "email", "label": "Adres email" },
+          { "id": "form_msg",  "name": "message", "typ": "textarea","label": "Opisz krótko swoją sprawę" }
+        ]
+      }
+    }
+  ],
+  "do_zrobienia_na_kolejnym_repo": [
+    "Upewnić się, że KAŻDE pole formularza ma atrybut name (nie tylko id)",
+    "Formularz powinien używać fetch + FormData do Web3Forms (nie onsubmit z alertem)",
+    "access_key dołączać przez formData.append('access_key', '...')",
+    "Przycisk submit blokować podczas wysyłki (disabled + zmiana tekstu)",
+    "Po sukcesie: alert po polsku + contactForm.reset()",
+    "Po błędzie: alert z data.message",
+    "Obsłużyć catch na wypadek braku sieci"
+  ],
+  "szablon_js": "contactForm.addEventListener('submit', async (e) => { e.preventDefault(); const formData = new FormData(contactForm); formData.append('access_key', 'TWOJ_KLUCZ'); submitBtn.disabled = true; try { const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData }); const data = await res.json(); if (res.ok) { alert('Dziękujemy! Wiadomość została wysłana.'); contactForm.reset(); } else { alert('Błąd: ' + data.message); } } catch { alert('Coś poszło nie tak. Spróbuj ponownie.'); } finally { submitBtn.disabled = false; } });"
+}
